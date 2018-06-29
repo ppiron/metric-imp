@@ -16,7 +16,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/convert', (req, res) => {
+	let response;
 	const input = req.query.input;
+	if (!input) {
+		res.send('invalid number and unit');
+	}
 	const units = {
 		gal: ['L', 3.78541, 'liters', 'gallons'],
 		L: ['gal', 1 / 3.78541, 'gallons', 'liters'],
@@ -30,7 +34,6 @@ app.get('/api/convert', (req, res) => {
 	value = evaluate(value);
 	const isValidNumber = value !== 'invalid number';
 	const isValidUnit = Object.keys(units).includes(unit);
-	let response;
 	if (!isValidNumber && !isValidUnit) {
 		response = 'invalid number and unit';
 	} else if (!isValidNumber) {
