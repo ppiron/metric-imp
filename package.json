@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "latest",
+    "helmet": "3.12.1",
+    "pug": "2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}

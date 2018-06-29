@@ -1,0 +1,8 @@
+html
+  head
+    title Express app
+  body
+    h1 Metric/Imp Converter
+    form(action='/api/convert', method='GET')
+      input(type='text', name='input', placeholder='3.1mi')
+      button(class='button') Submit
